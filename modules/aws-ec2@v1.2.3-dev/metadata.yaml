@@ -1,0 +1,101 @@
+name: aws-ec2
+displayName: Elastic Compute Cloud
+version: v1.2.2
+type: resource
+category: Compute
+provider: aws
+description: Amazon's cloud compute service
+author: richard.david@bcg.com
+tags:
+  - aws
+  - ec2
+  - instance
+  - vm
+  - computing
+
+variables:
+  - name: ec2_image_name
+    displayName: EC2 Image Name
+    values:
+      # In case of Ubuntu, value pattern: "ubuntu-<RELEASE_NAME>-<RELEASE_VERSION>"
+      - label: Linux Ubuntu 20.04
+        value: ubuntu-focal-20.04
+      - label: Linux Ubuntu 18.04
+        value: ubuntu-bionic-18.04
+  - name: ec2_instance_size
+    displayName: EC2 Instance Size
+    values:
+      - label: t2.micro
+        value: t2.micro
+      - label: t2.small
+        value: t2.small
+      - label: t2.medium
+        value: t2.medium
+      - label: t2.large
+        value: t2.large
+      - label: t2.xlarge
+        value: t2.xlarge
+      - label: t2.2xlarge
+        value: t2.2xlarge
+      - label: m4.large
+        value: m4.large
+      - label: m4.xlarge
+        value: m4.xlarge
+      - label: m4.2xlarge
+        value: m4.2xlarge
+      - label: m4.4xlarge
+        value: m4.4xlarge
+      - label: m4.10xlarge
+        value: m4.10xlarge
+      - label: m4.16xlarge
+        value: m4.16xlarge
+      - label: m3.medium
+        value: m3.medium
+      - label: m3.large
+        value: m3.large
+      - label: m3.xlarge
+        value: m3.xlarge
+      - label: m3.2xlarge
+        value: m3.2xlarge
+      - label: m1.small
+        value: m1.small
+      - label: m1.medium
+        value: m1.medium
+      - label: m1.large
+        value: m1.large
+      - label: m1.xlarge
+        value: m1.xlarge
+      - label: m3.4xlarge
+        value: m3.4xlarge
+      - label: m3.12xlarge
+        value: m3.12xlarge
+      - label: m3.24xlarge
+        value: m3.24xlarge
+      - label: c4.large
+        value: c4.large
+      - label: c4.xlarge
+        value: c4.xlarge
+      - label: c4.2xlarge
+        value: c4.2xlarge
+      - label: c4.4xlarge
+        value: c4.4xlarge
+      - label: c4.8xlarge
+        value: c4.8xlarge
+      - label: c3.large
+        value: c3.large
+      - label: c3.xlarge
+        value: c3.xlarge
+  - name: admin_user_pub_key
+    displayName: Admin public SSH Key
+
+outputs:
+  - name: server_version
+    displayName: Server version
+
+  - name: ssh_command
+    displayName: SSH Command
+    visible: true
+
+  - name: instance_public_ip
+    displayName: EC2 VM Public IP
+    visible: true

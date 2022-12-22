@@ -1,0 +1,25 @@
+name: aws-baseline-tfc
+displayName: GammaP TFC Baseline Adapter for Launchpad
+version: v0.1.0
+type: baseline
+provider: aws
+description: |
+  Baseline adapter-module for gamma-platform/tfc-lp-aws-baseline propagating infrastructure shared
+  by all project resources. VPC, subnets, security groups, IAM roles, etc.
+author: bocian.marek@bcg.com
+variables:
+  - name: is_create_hosted_zone
+    displayName: Create Hosted Zone
+    displayType: advanced
+
+  - name: r53_hosted_zone_name
+    displayName: R53 Hosted Zone Name
+    displayType: advanced
+
+  - name: r53_parent_hosted_zone_name
+    displayName: R53 Parent Hosted Zone Name
+    displayType: advanced
+
+  - name: ttl
+    displayName: R53 DNS Records cache time-to-live
+    displayType: advanced
